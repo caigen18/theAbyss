@@ -1,3 +1,26 @@
+
+                     ,dS$Sb,       ;$$$
+                   ,$$P^`^²$$,     ;$$$  ABYSS MBR  -*- vCC /_repo
+    $$$$$$$$$$$$$',$$;,$$$,;$$,`$$ I$$I $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+  $$$$$$P"²²╩?S$';$$;,$$$$$,;$$;P';$$$',$$$$$$$$$$$$$$$$P²"`.`,`$$$P²"`.`,`$$
+ $$$$$$';$SS#%y,;$$;_╩?$$$$$,;$$ ;$$$',$P²╩P"``"$$²"""",d$',yyyy$',d$' yyyy$$$
+ $$$$$;;$$SP╩²²;$$;,$#y▬,"²?$ $$;$$$' ,ySSy,$$$ $$ $$$;$$$;,`²?$$,$$$;,`²?$$$$$
+ $$SP╩ ╩"` "? ;$$; b,`^╩S$b,`+;$$$$I,$$"`"$$$$;;$$;;$$$`╩S$$$Sy,"?`╩S$$$Sy,`?$$
+ ,y%#S$$$²"` ;$$;         "?$, ;$$$;  `   ;$$$      $$$ ,y+`"²$$$; ,y+`"²$$$;$$
+ $$$$SS'    ;$$;  i_L       `?$,$$$$;     $$$$;    ;$$$$$;    ;$$$$$;    ;$$$;$$
+ ;$$S$;.,▬y$$$;               `$$$$$$,__,$$$?$$,__,$S$$$$;    ;$$$$$;    ;$$$;$$
+  `²?S$$$SP²'∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙ `I$I`²S$$S²'  `²S$$S²IS$$$$,__,$$$;$$$,__,$$$;$$
+ :       -x-  theABYSS  -x-     $$;   :           ;$$I`²S$$S²''  `²S$$S²''
+ :                              :$$   :            $$$
+ :  /solidity: m4ss, VAC        -:$   :            I$$;
+ :  /design  : VAC                ;   :            ;$$I
+ :  /IO+math : 1unacy                 :
+ :  /stack   : m4ss                   :
+ :  /counsel : 7dlm                   :
+ :....................................:
+
+*
+
 # How to build
 
 You can't clone the Abyss. There is only one Abyss. I will vehemently and aggressively defend our IP using extreme measures. I shape fates and crush dudes. Please be prepared to get raided and looted as soon as you come on my radar.
@@ -30,7 +53,7 @@ ABY* MATERIALIZATION EVENT:
 
 The baseq3 team @ the Abyss is kickstarting the initial distribution with an ABY materialization event. Contribute ETH to the Abyss Fair Launch smart contract to receive tokens, and the contributed ETH will be matched and added to the Abyss.
 
-# **Deflationary Farming**
+# Deflationary **EVERYTHING**
 
 Farming tokens have a problem for their owners. To keep users farming, they have to mint more ever more coins. This completely destroys the value of the underlying token, due to excessive inflation. It's easy to find examples of this across the DeFi ecosystem.
 
@@ -41,7 +64,6 @@ Our solution is the Abyss eternal, and it is quite simply the most brilliant ide
 2. Feed the Abyss tokens you voted on with the governance induced by ABY and watch it cause havoc on the market while popping out NFTs with the screaming souls of the devs who
 
 3. Propagate the OBOL ecosystem and expand the providence of the Abyss.
-...
 
 This simple process means that those holding ABY tokens are the only people on the planet, able to exert some form of control over /potentially/ the biggest Decentralized Autonomous Entity/burnpool on the ethereum network.
 
@@ -49,9 +71,9 @@ This simple process means that those holding ABY tokens are the only people on t
 
 The holdings of CHARON and the weight of the bags it carries can only go up given time. Making sure the price of OBOL keeps pace is therefore a logical priority and to that extent, the DAO is able to add/remove OBOL tokens from circulation with a part of its' holdings, at any given time.
 
-The incentive to generate OBOL is tied to several mechanisms. Propagating token removal plays a significant role in this but the primary mechanic to OBOL is
+The incentive to generate OBOL is tied to several mechanisms. Propagating token removal plays a significant role in this but the primary mechanic to OBOL is the reward system it accommodates and the slew of new derivative-based instruments that can be built on top. 
 
-This will guarantee a stable market, giving holders and farmers skin in the game.
+This will guarantee a stable market, giving holders and farmers an incentive to stay tied to the protocol.
 
 # **Real Governance**
 
