@@ -1,0 +1,61 @@
+/
+/                     ,dS$Sb,       ;$$$
+/                   ,$$P^`^²$$,     ;$$$
+/    $$$$$$$$$$$$$',$$;,$$$,;$$,`$$ I$$I $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+/  $$$$$$P"²²╩?S$';$$;,$$$$$,;$$;P';$$$',$$$$$$$$$$$$$$$$P²"`.`,`$$$P²"`.`,`$$
+/ $$$$$$';$SS#%y,;$$;_╩?$$$$$,;$$ ;$$$',$P²╩P"``"$$²"""",d$',yyyy$',d$' yyyy$$$
+/ $$$$$;;$$SP╩²²;$$;,$#y▬,"²?$ $$;$$$' ,ySSy,$$$ $$ $$$;$$$;,`²?$$,$$$;,`²?$$$$$
+/ $$SP╩ ╩"` "? ;$$; b,`^╩S$b,`+;$$$$I,$$"`"$$$$;;$$;;$$$`╩S$$$Sy,"?`╩S$$$Sy,`?$$$
+/ ,y%#S$$$²"` ;$$;         "?$, ;$$$;  `   ;$$$      $$$ ,y+`"²$$$; ,y+`"²$$$;$$$
+/ $$$$SS'    ;$$;  i_L       `?$,$$$$;     $$$$;    ;$$$$$;    ;$$$$$;    ;$$$;$$
+/ ;$$S$;.,▬y$$$;               `$$$$$$,__,$$$?$$,__,$S$$$$;    ;$$$$$;    ;$$$;$$
+/  `²?S$$$SP²'∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙ `I$I`²S$$S²'  `²S$$S²IS$$$$,__,$$$;$$$,__,$$$;$$
+/ :       -x- ABY/ah -x-         $$;   :           ;$$I`²S$$S²''  `²S$$S²''
+/ :                              :$$   :            $$$
+/ :  / solidity. : m4ss, VAC     -:$   :            I$$;
+/ :  / design    : VAC, m4ss       ;   :            ;$$I
+/ :  / I0        : 1unacy              :
+/ :  / stack     : m4ss                :
+/ :  / counsel   : 7dlm                :
+/ :  / math      : 1unacy, 7dlm.       :
+/ :  / stratagem : 1unacy, VAC.        :
+/ :....................................:
+
+
+/ ██╗   ██╗  █████╗   ██████╗
+/ ██║   ██║ ██╔══██╗ ██╔════╝
+/ ██║   ██║ ███████║ ██║
+/ ╚██╗ ██╔╝ ██╔══██║ ██║
+/  ╚████╔╝  ██║  ██║ ╚██████╗
+/   ╚═══╝   ╚═╝  ╚═╝  ╚═════╝
+
+Learning chops from greats in the industry, and successfully growing and scaling businesses of many verticals - but surprisingly effective in crypto and blockchain. Having grown crowdsales since 2016, successfully organizing and raising $10s of millions, you've most likely bought something he made. Professionally accomplished and utterly certain in the Abyss' vision, this is the pinnacle and culmination of all the steps he's taken in his life.
+
+VAC has had more than 10 years of retail/IT experience before entering into corporate and small business marketing as a community moderator from before the time of Telegram and Discord. From before the time of Skype, or AOL/MSNm even. He's accustomed to the tides and flow of monarchs and markets and chills with the elders of the actual internet.
+
+/ ███╗   ███╗ ██╗  ██╗ ███████╗ ███████╗
+/ ████╗ ████║ ██║  ██║ ██╔════╝ ██╔════╝
+/ ██╔████╔██║ ███████║ ███████╗ ███████╗
+/ ██║╚██╔╝██║ ╚════██║ ╚════██║ ╚════██║
+/ ██║ ╚═╝ ██║      ██║ ███████║ ███████║
+/ ╚═╝     ╚═╝      ╚═╝ ╚══════╝ ╚══════╝
+
+Solidity dev extraordinaire, m4ss has been working at the frontier of finance and later decentralized finance and innovating, building, and delivering products that people use every day to help them achieve their financial independence. He's heavily invested in banking the unbanked, like Satoshi had envisioned, and spends his time doctoring new means towards that end.
+
+M4ss found his love of code early, drawn into the world of terminal fantasy games as a teenager - quickly learning how to mod, iterate, and build something bigger and better than what was originally offered. He studied - twice - and has a master's of computing science from a reputable university.
+
+As the only scion of a near-deity level IT community figure, he's here to provide the chops to get interplanetary ideas moving and only had to exclaim  "I GOT IT FUCCC FINALLY!" once, in the whole course of development.
+
+/  ██╗ ██╗   ██╗ ███╗   ██╗  █████╗   ██████╗ ██╗   ██╗
+/ ███║ ██║   ██║ ████╗  ██║ ██╔══██╗ ██╔════╝ ╚██╗ ██╔╝
+/ ╚██║ ██║   ██║ ██╔██╗ ██║ ███████║ ██║       ╚████╔╝
+/  ██║ ██║   ██║ ██║╚██╗██║ ██╔══██║ ██║        ╚██╔╝
+/  ██║ ╚██████╔╝ ██║ ╚████║ ██║  ██║ ╚██████╗    ██║
+/  ╚═╝  ╚═════╝  ╚═╝  ╚═══╝ ╚═╝  ╚═╝  ╚═════╝    ╚═╝
+
+Whoever is behind 1unacy enjoys a history of open-source collaboration and contribution, having grown from roots in websites and packaging prebuilt solutions for local organizations and eventually wrapping head around different stacks for different purposes.
+
+1unacy was a supreme sorcerer at the dawn of the universe.
+Briefly touching on machine learning for a startup that was later sold, he has a high-level grasp and understanding of most levels of organizational management and architecture. While he doesn't code much, he codes well and generally uses statistics and data science to kill it.
+
+ABY is the product of a 1unatic's vision of an equilibrium.
