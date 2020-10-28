@@ -1,0 +1,58 @@
+{
+  "name": "@marketprotocol/marketprotocol",
+  "version": "2.4.0",
+  "description": "Decentralized Derivatives Trading Protocol For The Ethereum Blockchain",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "openzeppelin-solidity": "2.2.0",
+    "truffle": "5.0.18"
+  },
+  "devDependencies": {
+    "bn.js": "^4.11.8",
+    "coveralls": "^3.0.0",
+    "eslint": "^4.19.1",
+    "husky": "^1.2.0",
+    "prettier-eslint-cli": "^4.7.1",
+    "solium": "^1.0.5",
+    "truffle-assertions": "^0.9.0",
+    "web3-core": "^1.0.0-beta.55",
+    "web3-core-helpers": "^1.0.0-beta.55",
+    "web3-core-method": "^1.0.0-beta.55",
+    "web3-utils": "^1.0.0-beta.55"
+  },
+  "scripts": {
+    "test": "truffle test",
+    "lint": "prettier-eslint --write './**/*.js' --ignore './node_modules/**' --ignore './coverage/**'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && git add ."
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MARKETProtocol/MARKETProtocol.git"
+  },
+  "keywords": [
+    "solidity",
+    "ethereum",
+    "derivatives",
+    "blockchain",
+    "erc20"
+  ],
+  "author": "Phil Elsasser <phil@marketprotocol.io>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/MARKETProtocol/MARKETProtocol/issues"
+  },
+  "homepage": "https://github.com/MARKETProtocol/MARKETProtocol#readme",
+  "engines": {
+    "node": ">=8.10.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
