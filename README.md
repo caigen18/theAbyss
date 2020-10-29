@@ -1,5 +1,4 @@
 
-
 # How to build
 
 You can't clone the Abyss. There is only one Abyss. I will vehemently and aggressively defend our IP using extreme measures. I shape fates and crush dudes. Please be prepared to get raided and looted as soon as you come on my radar.
@@ -17,13 +16,13 @@ Only ABY token holders will be able to provide strategy contracts and vote on wh
 ***
 
 ABY* Token:
- - [ABY* Token - 0x6ADEF19053734E6182aA2c2fD37e931d13C69f76](https://etherscan.io/address/0x6ADEF19053734E6182aA2c2fD37e931d13C69f76)
+ - [ABY* Token - 0x26c5331a8AAEDe3d3Af276fD61329163a55ECbCa](https://etherscan.io/address/0x26c5331a8AAEDe3d3Af276fD61329163a55ECbCa)
 
 ABYSS:
- - [ABYSS - 0x3f0d180Fb82f47fd419F6446B268c74f8942EF17](https://etherscan.io/address/0x3f0d180Fb82f47fd419F6446B268c74f8942EF17)
+ - [ABYSS - 0x087902C743ba18cdF23C848798a16bC2315C265e](https://etherscan.io/address/0x087902C743ba18cdF23C848798a16bC2315C265e)
 
 ABY* MATERIALIZATION EVENT:
- - [IME - 0x157ad808212c715cbc26CEDa6484a131A17f78f6](https://etherscan.io/address/0x157ad808212c715cbc26CEDa6484a131A17f78f6)
+ - [TME - 0x166040b3db5d8c48eeDC625aD2100E475b7d8eC8](https://etherscan.io/address/0x166040b3db5d8c48eeDC625aD2100E475b7d8eC8)
 
 
 ***
@@ -42,7 +41,7 @@ Our solution is the Abyss eternal, and it is quite simply the most brilliant ide
 
 2. Feed the Abyss tokens you voted on with the governance induced by ABY and watch it cause havoc on the market while popping out NFTs with the screaming souls of the devs who
 
-3. Propagate the OBOL ecosystem and expand the providence of the Abyss.
+3. Propagate the OBOL ecosystem and expand the providence of the Abyss by expanding into the Void.
 
 This simple process means that those holding ABY tokens are the only people on the planet, able to exert some form of control over /potentially/ the biggest Decentralized Autonomous Entity/burnpool on the ethereum network.
 
@@ -50,7 +49,7 @@ This simple process means that those holding ABY tokens are the only people on t
 
 The holdings of CHARON and the weight of the bags it carries can only go up given time. Making sure the price of OBOL keeps pace is therefore a logical priority and to that extent, the DAO is able to add/remove OBOL tokens from circulation with a part of its' holdings, at any given time.
 
-The incentive to generate OBOL is tied to several mechanisms. Propagating token removal plays a significant role in this but the primary mechanic to OBOL is the reward system it accommodates and the slew of new derivative-based instruments that can be built on top. 
+The incentive to generate OBOL is tied to several mechanisms. Propagating token removal plays a significant role in this but the primary mechanic to OBOL is the reward system it accommodates and the slew of new derivative-based instruments that can be built on top.
 
 This will guarantee a stable market, giving holders and farmers an incentive to stay tied to the protocol.
 
