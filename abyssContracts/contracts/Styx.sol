@@ -77,6 +77,9 @@ contract Styx is MultipleOwnable {
     /* Contract Variables and events */
     uint public minimumQuorum;
 
+    /*obol rate to be used in the bid function*/
+    uint public obolFactor = 1;
+
 
     uint256 public tokentoeats;
 
@@ -106,7 +109,7 @@ contract Styx is MultipleOwnable {
 
     event ChangeOfRules(uint minimumQuorum);
 
-    event Eat (address dead, uint256 eth, uint256 token, address sd, uint256 timeWas);
+    event Eat (address dead, uint256 eth, uint256 token, uint256 obol, address sd, uint256 timeWas);
 
 
 
@@ -283,13 +286,24 @@ contract Styx is MultipleOwnable {
 
     }
 
-     /* Set minimumAby */
+    /* Set minimumAby */
 
     function setMinimumAby(uint256 _abyAmount) onlyOwner public {
 
         minimumAby = _abyAmount;
 
     }
+
+    /* Set obolFactor */
+
+    function setObolFactor(uint256 _newobolFactor) onlyOwner public {
+
+        obolFactor = _newobolFactor;
+
+    }
+
+
+    
 
 
 
@@ -339,6 +353,10 @@ contract Styx is MultipleOwnable {
 
         require(block.timestamp >= proposalDate[id].add(safeDay));
 
+
+        //update time for the obol bid as well
+
+        proposalDate[id] = block.timestamp;
 
 
 
@@ -396,7 +414,7 @@ contract Styx is MultipleOwnable {
 
         _obolBalances[msg.sender][tokenthatfailed][id] = _obolBalances[msg.sender][tokenthatfailed][id].sub(amount);
 
-        require(obol.transfer(msg.sender, amount));
+        obol.safeTransfer(msg.sender, amount);
 
     }
 
@@ -417,6 +435,27 @@ contract Styx is MultipleOwnable {
 
 
 
+     /* Function returns true on uniswap trade to prevent the nextTokenToEat failed and stuck if price impact is too high */
+    function sellTokensToUniswap(address token, uint256 amountToSell) external onlyPools(msg.sender) returns (bool){
+
+
+         // (Uniswap allows ERC20:ERC20 but most liquidity is on ETH:ERC20 markets)
+            IUniswap uniswap = IUniswap(uniswapAddress);
+
+            address[] memory path = new address[](2);
+            path[0] = address(token);
+            path[1] = address(weth);
+            uniswap.swapExactTokensForETH(
+                 amountToSell,
+                 1,
+                 path,
+                 address(this),
+                 now
+            );
+
+            return true;
+
+    }
 
 
 
@@ -425,7 +464,7 @@ contract Styx is MultipleOwnable {
     function sellTokenForEth(address token, uint256 amountToEat) internal returns (bool){
 
 
-         // (Uniswap allows ERC20:ERC20 but most liquidity is on ETH:ERC20 markets)
+         //(Uniswap allows ERC20:ERC20 but most liquidity is on ETH:ERC20 markets)
             IUniswap uniswap = IUniswap(uniswapAddress);
 
             address[] memory path = new address[](2);
@@ -455,10 +494,15 @@ contract Styx is MultipleOwnable {
         require(obol.transferFrom(msg.sender, address(this), amount),"obol app");
 
 
-        if(amount > highBidderAm){
+        require(!waitingUpgrade, "upgrade");
+
+        _obolBalances[msg.sender][nextTokenToEat][id] = _obolBalances[msg.sender][nextTokenToEat][id].add(amount);
+
+
+        if(_obolBalances[msg.sender][nextTokenToEat][id] > highBidderAm){
 
             highBidder = msg.sender;
-            highBidderAm = amount;
+            highBidderAm = _obolBalances[msg.sender][nextTokenToEat][id];
         }
 
         totalObol = totalObol.add(amount);
@@ -466,81 +510,95 @@ contract Styx is MultipleOwnable {
 
 
 
-        _obolBalances[msg.sender][nextTokenToEat][id].add(amount);
+        
 
-        uint256 amountToEat = address(this).balance.sub((address(this).balance.mul(percKeep)).div(100));
+        
+        //this way, still accepting obol and bids but will process only after the safeday
+
+        if(block.timestamp >= proposalDate[id].add(safeDay)){
 
 
-        if(totalObol >= (amountToEat)){
+            uint256 amountToEat = address(this).balance.sub((address(this).balance.mul(percKeep)).div(100));
 
-            //if obol amount is bigger or same than eth value in, should give the NFT or ask Styx to burn obol and send the eth to uniswap and burn the desired token
-            highBidder = address(0);
-            highBidderAm = 0;
-
-            //set back NextTokenToEat to zero
-
-            tokenVoteEaten[nextTokenToEat][id] = false;
-
+            //require(totalObol >= amountToEat.mul(obolFactor), "goal not reached");
             
+                
+            if(totalObol >= amountToEat.mul(obolFactor)){
+                
+               
+                totalObol = 0;
 
-            uint256 obolToAb = totalObol;
-
-            totalObol = 0;
-
-            address prevToken = nextTokenToEat;
-
-            nextTokenToEat = address(0);
-
-            
-            
-
-
-            if(sellTokenForEth(prevToken, amountToEat)){
-
-                //burn obol
-                require(obol.transfer(abyss, obolToAb) ,"obol to abyss");
-
+                address prevToken = nextTokenToEat;
 
 
                 IERC20 blToken = IERC20(prevToken);
+                uint256 blTokenBl = blToken.balanceOf(address(this));
 
-                //Mint NFT
-                shardNft.awardItem(msg.sender, prevToken, blToken.balanceOf(abyss), obolToAb);
+                nextTokenToEat = address(0);
 
-
-
-
-                obolFailed[prevToken][id] = false;
-
-                emit Eat(prevToken, amountToEat, blToken.balanceOf(address(this)), abyss, block.timestamp);
-
-                blToken.transfer(abyss, blToken.balanceOf(address(this)));
+                    
+                    
 
 
-            }else{
-                //cannot sell on uniswap, mark as failed so people can redeem their obol
+                if(sellTokenForEth(prevToken, amountToEat)){
+
+
+
+                    //set obol balance to winner to zero so others can redeem
+                    _obolBalances[msg.sender][nextTokenToEat][id] = 0;
+
+
+
+                    
+
+
+                    blToken.transfer(abyss, blTokenBl);
+
+
+                    //burn obol
+                    require(obol.transfer(abyss, highBidderAm) ,"obol to abyss");
+
+
+
+                    
+                    //Mint NFT
+                    shardNft.awardItem(highBidder, prevToken, blTokenBl, highBidderAm);
+
+                    
+                        
+                    emit Eat(prevToken, amountToEat, blTokenBl, highBidderAm, abyss, block.timestamp);
+
+                    
+
+
+                }
+
                 obolFailed[prevToken][id] = true;
+                highBidder = address(0);
+                highBidderAm = 0;
+
             }
 
-            
-
-
-
         }
-
-
-
-
 
     }
 
 
     /*function to upgrade Styx to a new copy, letting people withdraw tokens, then migrate*/
 
-    function initiateUpgrade(uint256 _Days) public onlyOwner {
+    function initiateUpgrade(uint256 _Days, uint256 actualProposalId) public onlyOwner {
 
         //being fair
         require(_Days >= 7);
+
+        //if obol bid running, mark it as false so peoplle can also redeem obol
+
+        if(nextTokenToEat != address(0)){
+            //if a token is set, requiring the correct ID set as actualProposalId to prevent
+            require(tokentoeat[actualProposalId] == nextTokenToEat ,"nextTokenToEat incorrect");
+            //setting as ture so withdraw possible
+            obolFailed[nextTokenToEat][actualProposalId] = true;
+        }
 
         //setting the delay and blocking proposal
         waitingUpgrade = true;
@@ -555,13 +613,13 @@ contract Styx is MultipleOwnable {
 
 
     function upgrade(address _newStyx) public onlyOwner {
-
+        require(_newStyx != address(0x0));
         //require time
         require(block.timestamp >= waitingUpgradeTime && waitingUpgrade);
 
         //move ether
 
-        payable(address(_newStyx)).transfer(address(this).balance);
+        //payable(address(_newStyx)).transfer(address(this).balance);
 
 
         //burn obol
@@ -570,8 +628,12 @@ contract Styx is MultipleOwnable {
         //so sad but burn aby
         require(aby.transfer(abyss, aby.balanceOf(address(this))));
 
+        //move ether self destruct
+        selfdestruct(payable(_newStyx));
+
 
     }
+
 
 
 
