@@ -82,6 +82,12 @@ contract Styx is MultipleOwnable {
 
     mapping (uint256 => address) public tokentoeat;
 
+    //date proposal created and safe
+    uint256 public safeDay = aDay;
+    mapping (uint256 => uint256) public proposalDate;
+
+
+
     //addy->id->votes
     mapping (address => mapping(uint256 => uint256)) public tokenVote;
     //addy->id->bool
@@ -156,6 +162,9 @@ contract Styx is MultipleOwnable {
     uint public percKeep = 10;
 
   
+    //minimum amount of ABY to initial a vote
+
+    uint public minimumAby = 10 ether;
 
 
     //uniswap
@@ -256,7 +265,31 @@ contract Styx is MultipleOwnable {
 
     }
 
+     /* Set safeDay */
+
+    function setSafeDay(uint256 _amountOfDay) onlyOwner public {
+
+        safeDay = _amountOfDay.mul(aDay);
+
+    }
+
     
+
+    /* Set percKeep */
+
+    function setPercKeep(uint256 _percAmount) onlyOwner public {
+
+        percKeep = _percAmount;
+
+    }
+
+     /* Set minimumAby */
+
+    function setMinimumAby(uint256 _abyAmount) onlyOwner public {
+
+        minimumAby = _abyAmount;
+
+    }
 
 
 
@@ -274,7 +307,11 @@ contract Styx is MultipleOwnable {
 
         require(!waitingUpgrade);
 
+        require(abyam >= minimumAby);
+
         tokentoeat[tokentoeats] = _nextTokenToEat;
+
+        proposalDate[tokentoeats] = block.timestamp;
 
         tokentoeats = tokentoeats.add(1);
 
@@ -299,6 +336,8 @@ contract Styx is MultipleOwnable {
         require(!waitingUpgrade);
         require(nextTokenToEat == address(0));
         require(tokenVote[_nextTokenToEat][id] >= minimumQuorum && !tokenVoteEaten[_nextTokenToEat][id]);
+
+        require(block.timestamp >= proposalDate[id].add(safeDay));
 
 
 
@@ -373,6 +412,8 @@ contract Styx is MultipleOwnable {
         return true;
 
     }
+
+   
 
 
 
