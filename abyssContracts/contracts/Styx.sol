@@ -435,27 +435,7 @@ contract Styx is MultipleOwnable {
 
 
 
-     /* Function returns true on uniswap trade to prevent the nextTokenToEat failed and stuck if price impact is too high */
-    function sellTokensToUniswap(address token, uint256 amountToSell) external onlyPools(msg.sender) returns (bool){
-
-
-         // (Uniswap allows ERC20:ERC20 but most liquidity is on ETH:ERC20 markets)
-            IUniswap uniswap = IUniswap(uniswapAddress);
-
-            address[] memory path = new address[](2);
-            path[0] = address(token);
-            path[1] = address(weth);
-            uniswap.swapExactTokensForETH(
-                 amountToSell,
-                 1,
-                 path,
-                 address(this),
-                 now
-            );
-
-            return true;
-
-    }
+ 
 
 
 
